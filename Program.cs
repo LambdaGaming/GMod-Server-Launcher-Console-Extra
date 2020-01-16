@@ -34,7 +34,7 @@ namespace CityRP_Server_Launcher
                 goto StartSelect;
             }
 
-            if( select > Maps.Length )
+            if( select - 1 > Maps.Length )
             {
                 Console.WriteLine( "ERROR: Picked a number that exceeds the number of maps. Press any key to continue." );
                 Console.ReadLine();
@@ -46,7 +46,7 @@ namespace CityRP_Server_Launcher
                 UseShellExecute = true,
                 WorkingDirectory = Dir,
                 FileName = Dir + @"\srcds.exe",
-                Arguments = "+gamemode " + Gamemode + " -console +map " + Maps[select] + " +maxplayers " + MaxPlayers + " +r_hunkalloclightmaps 0",
+                Arguments = "+gamemode " + Gamemode + " -console +map " + Maps[select - 1] + " +maxplayers " + MaxPlayers + " +r_hunkalloclightmaps 0",
                 WindowStyle = ProcessWindowStyle.Maximized
             };
 
