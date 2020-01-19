@@ -19,7 +19,7 @@ namespace CityRP_Server_Launcher_UI
 		{
 			if( lancheck.Checked )
 			{
-				lan = "sv_lan 1";
+				lan = "+sv_lan 1";
 				return;
 			}
 			lan = "";
@@ -53,7 +53,7 @@ namespace CityRP_Server_Launcher_UI
 					UseShellExecute = true,
 					WorkingDirectory = @"E:\lambda_cityrp",
 					FileName = @"E:\lambda_cityrp\srcds.exe",
-					Arguments = "+gamemode darkrp " + console + lan + " +map " + mapselect.SelectedItem.ToString() + " +maxplayers " + numericUpDown1.Value + " +r_hunkalloclightmaps 0",
+					Arguments = "+gamemode darkrp " + console + " " + lan + " +map " + mapselect.SelectedItem.ToString() + " +maxplayers " + numericUpDown1.Value + " +r_hunkalloclightmaps 0",
 					WindowStyle = ProcessWindowStyle.Maximized
 				};
 				Process.Start( proc );
