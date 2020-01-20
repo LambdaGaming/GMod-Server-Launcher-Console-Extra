@@ -11,9 +11,9 @@ namespace CityRP_Server_Launcher_UI
 			InitializeComponent();
 		}
 
-		private string console;
-		private string lan;
-		private string map;
+		private string console = "";
+		private string lan = "";
+		private string map = "";
 
 		private void LanCheck( object sender, EventArgs e )
 		{
@@ -29,7 +29,7 @@ namespace CityRP_Server_Launcher_UI
 		{
 			if( consolecheck.Checked )
 			{
-				console = "-console";
+				console = "-console ";
 			}
 			else
 			{
@@ -42,20 +42,24 @@ namespace CityRP_Server_Launcher_UI
 
 		private void MaxPlayersChanged( object sender, EventArgs e ){} // Unused for now
 
-		private void MapChanged( object sender, EventArgs e ){} // Unused for now
+		private void MapChanged( object sender, EventArgs e )
+		{
+			map = "+map " + mapselect.SelectedItem.ToString();
+		}
 
 		private void StartButtonClick( object sender, EventArgs e )
 		{
+			var proc = new ProcessStartInfo
+			{
+				UseShellExecute = true,
+				WorkingDirectory = @"E:\lambda_cityrp",
+				FileName = @"E:\lambda_cityrp\srcds.exe",
+				Arguments = "+gamemode darkrp " + console + lan + map + " +maxplayers " + maxplayers.Value + " +r_hunkalloclightmaps 0",
+				WindowStyle = ProcessWindowStyle.Maximized
+			};
+
 			try
 			{
-				var proc = new ProcessStartInfo
-				{
-					UseShellExecute = true,
-					WorkingDirectory = @"E:\lambda_cityrp",
-					FileName = @"E:\lambda_cityrp\srcds.exe",
-					Arguments = "+gamemode darkrp " + console + " " + lan + " +map " + mapselect.SelectedItem.ToString() + " +maxplayers " + numericUpDown1.Value + " +r_hunkalloclightmaps 0",
-					WindowStyle = ProcessWindowStyle.Maximized
-				};
 				Process.Start( proc );
 				Close();
 			}

@@ -26,11 +26,11 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+			this.maxplayers = new System.Windows.Forms.NumericUpDown();
 			this.label2 = new System.Windows.Forms.Label();
 			this.consolecheck = new System.Windows.Forms.CheckBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.maxplayers)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lancheck
@@ -102,26 +102,26 @@
 			// 
 			// numericUpDown1
 			// 
-			this.numericUpDown1.Location = new System.Drawing.Point(12, 170);
-			this.numericUpDown1.Maximum = new decimal(new int[] {
+			this.maxplayers.Location = new System.Drawing.Point(12, 170);
+			this.maxplayers.Maximum = new decimal(new int[] {
             120,
             0,
             0,
             0});
-			this.numericUpDown1.Minimum = new decimal(new int[] {
+			this.maxplayers.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(61, 20);
-			this.numericUpDown1.TabIndex = 6;
-			this.numericUpDown1.Value = new decimal(new int[] {
+			this.maxplayers.Name = "numericUpDown1";
+			this.maxplayers.Size = new System.Drawing.Size(61, 20);
+			this.maxplayers.TabIndex = 6;
+			this.maxplayers.Value = new decimal(new int[] {
             24,
             0,
             0,
             0});
-			this.numericUpDown1.ValueChanged += new System.EventHandler(this.MaxPlayersChanged);
+			this.maxplayers.ValueChanged += new System.EventHandler(this.MaxPlayersChanged);
 			// 
 			// label2
 			// 
@@ -154,7 +154,7 @@
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
 			this.ClientSize = new System.Drawing.Size(484, 461);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.numericUpDown1);
+			this.Controls.Add(this.maxplayers);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label1);
@@ -167,7 +167,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "CityRP Server Launcher";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.maxplayers)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -180,7 +180,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.NumericUpDown numericUpDown1;
+		private System.Windows.Forms.NumericUpDown maxplayers;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.CheckBox consolecheck;
 	}
