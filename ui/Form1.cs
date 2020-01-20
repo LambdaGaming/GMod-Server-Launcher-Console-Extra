@@ -19,7 +19,7 @@ namespace CityRP_Server_Launcher_UI
 		{
 			if( lancheck.Checked )
 			{
-				lan = "+sv_lan 1";
+				lan = " +sv_lan 1 ";
 				return;
 			}
 			lan = "";
@@ -29,7 +29,7 @@ namespace CityRP_Server_Launcher_UI
 		{
 			if( consolecheck.Checked )
 			{
-				console = "-console ";
+				console = " -console ";
 			}
 			else
 			{
