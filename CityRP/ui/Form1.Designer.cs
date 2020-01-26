@@ -25,12 +25,12 @@
 			this.mapselect = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.maxplayers = new System.Windows.Forms.NumericUpDown();
 			this.label2 = new System.Windows.Forms.Label();
 			this.consolecheck = new System.Windows.Forms.CheckBox();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.maxplayers)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lancheck
@@ -46,7 +46,7 @@
 			this.lancheck.UseVisualStyleBackColor = true;
 			this.lancheck.CheckedChanged += new System.EventHandler(this.LanCheck);
 			// 
-			// comboBox1
+			// mapselect
 			// 
 			this.mapselect.Enabled = false;
 			this.mapselect.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -59,7 +59,7 @@
             "rp_truenorth_v1a",
             "rp_newexton2_v4h"});
 			this.mapselect.Location = new System.Drawing.Point(12, 258);
-			this.mapselect.Name = "comboBox1";
+			this.mapselect.Name = "mapselect";
 			this.mapselect.Size = new System.Drawing.Size(132, 23);
 			this.mapselect.TabIndex = 2;
 			this.mapselect.SelectedIndexChanged += new System.EventHandler(this.MapChanged);
@@ -90,17 +90,7 @@
 			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.StartButtonClick);
 			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = global::CityRP_Server_Launcher_UI.Properties.Resources.lambda_cityrp_2018;
-			this.pictureBox1.ImageLocation = "";
-			this.pictureBox1.Location = new System.Drawing.Point(232, 81);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-			this.pictureBox1.TabIndex = 5;
-			this.pictureBox1.TabStop = false;
-			// 
-			// numericUpDown1
+			// maxplayers
 			// 
 			this.maxplayers.Location = new System.Drawing.Point(12, 170);
 			this.maxplayers.Maximum = new decimal(new int[] {
@@ -113,7 +103,7 @@
             0,
             0,
             0});
-			this.maxplayers.Name = "numericUpDown1";
+			this.maxplayers.Name = "maxplayers";
 			this.maxplayers.Size = new System.Drawing.Size(61, 20);
 			this.maxplayers.TabIndex = 6;
 			this.maxplayers.Value = new decimal(new int[] {
@@ -134,18 +124,28 @@
 			this.label2.TabIndex = 7;
 			this.label2.Text = "Max Players:";
 			// 
-			// checkBox2
+			// consolecheck
 			// 
 			this.consolecheck.AutoSize = true;
 			this.consolecheck.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.consolecheck.ForeColor = System.Drawing.Color.White;
 			this.consolecheck.Location = new System.Drawing.Point(12, 82);
-			this.consolecheck.Name = "checkBox2";
+			this.consolecheck.Name = "consolecheck";
 			this.consolecheck.Size = new System.Drawing.Size(98, 19);
 			this.consolecheck.TabIndex = 1;
 			this.consolecheck.Text = "Enable Console";
 			this.consolecheck.UseVisualStyleBackColor = true;
 			this.consolecheck.CheckedChanged += new System.EventHandler(this.ConsoleCheck);
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::CityRP_Server_Launcher_UI.Properties.Resources.lambda_srcds_2018_transparent;
+			this.pictureBox1.ImageLocation = "";
+			this.pictureBox1.Location = new System.Drawing.Point(233, 102);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(204, 179);
+			this.pictureBox1.TabIndex = 5;
+			this.pictureBox1.TabStop = false;
 			// 
 			// Form1
 			// 
@@ -166,8 +166,8 @@
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "CityRP Server Launcher";
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.maxplayers)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
