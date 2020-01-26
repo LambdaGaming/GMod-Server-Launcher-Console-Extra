@@ -84,9 +84,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="lambda_cityrp_2018.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\lambda_srcds_2018_transparent.png" />
     <Content Include="serverlaunchericon.ico" />
   </ItemGroup>
