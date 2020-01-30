@@ -63,16 +63,6 @@ namespace CityRP_Server_Launcher_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lambda_cityrp_2018 {
-            get {
-                object obj = ResourceManager.GetObject("lambda_cityrp_2018", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap lambda_srcds_2018_transparent {
             get {
                 object obj = ResourceManager.GetObject("lambda_srcds_2018_transparent", resourceCulture);
