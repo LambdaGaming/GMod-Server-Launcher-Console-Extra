@@ -10,7 +10,8 @@ namespace CityRP_Server_Launcher_UI
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault( false );
-			Application.Run( new Form1() );
+			Application.Run( new MainForm() );
+			Properties.Settings.Default.Save();
 		}
 	}
 }

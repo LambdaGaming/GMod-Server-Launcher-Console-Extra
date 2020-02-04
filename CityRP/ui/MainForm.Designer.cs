@@ -1,6 +1,6 @@
 ﻿namespace CityRP_Server_Launcher_UI
 {
-	partial class Form1
+	partial class MainForm
 	{
 		private System.ComponentModel.IContainer components = null;
 		protected override void Dispose( bool disposing )
@@ -20,7 +20,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.lancheck = new System.Windows.Forms.CheckBox();
 			this.mapselect = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
@@ -36,6 +36,7 @@
 			// lancheck
 			// 
 			this.lancheck.AutoSize = true;
+			this.lancheck.Cursor = System.Windows.Forms.Cursors.Default;
 			this.lancheck.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lancheck.ForeColor = System.Drawing.Color.White;
 			this.lancheck.Location = new System.Drawing.Point(12, 12);
@@ -147,7 +148,7 @@
 			this.pictureBox1.TabIndex = 5;
 			this.pictureBox1.TabStop = false;
 			// 
-			// Form1
+			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -163,7 +164,7 @@
 			this.Controls.Add(this.lancheck);
 			this.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Name = "Form1";
+			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "CityRP Server Launcher";
 			((System.ComponentModel.ISupportInitialize)(this.maxplayers)).EndInit();

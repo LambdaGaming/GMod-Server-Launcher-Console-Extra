@@ -8,23 +8,67 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CityRP_Server_Launcher_UI.Properties
-{
-
-
-	[global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute( "Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0" )]
-	internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-	{
-
-		private static Settings defaultInstance = ( ( Settings ) ( global::System.Configuration.ApplicationSettingsBase.Synchronized( new Settings() ) ) );
-
-		public static Settings Default
-		{
-			get
-			{
-				return defaultInstance;
-			}
-		}
-	}
+namespace CityRP_Server_Launcher_UI.Properties {
+    
+    
+    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
+    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Console {
+            get {
+                return ((bool)(this["Console"]));
+            }
+            set {
+                this["Console"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Lan {
+            get {
+                return ((bool)(this["Lan"]));
+            }
+            set {
+                this["Lan"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\"\"")]
+        public string Map {
+            get {
+                return ((string)(this["Map"]));
+            }
+            set {
+                this["Map"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("24")]
+        public int MaxPlayers {
+            get {
+                return ((int)(this["MaxPlayers"]));
+            }
+            set {
+                this["MaxPlayers"] = value;
+            }
+        }
+    }
 }
