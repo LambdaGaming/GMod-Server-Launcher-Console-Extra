@@ -39,7 +39,7 @@
 			this.lancheck.Cursor = System.Windows.Forms.Cursors.Default;
 			this.lancheck.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lancheck.ForeColor = System.Drawing.Color.White;
-			this.lancheck.Location = new System.Drawing.Point(12, 12);
+			this.lancheck.Location = new System.Drawing.Point(12, 82);
 			this.lancheck.Name = "lancheck";
 			this.lancheck.Size = new System.Drawing.Size(78, 19);
 			this.lancheck.TabIndex = 0;
@@ -130,7 +130,7 @@
 			this.consolecheck.AutoSize = true;
 			this.consolecheck.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.consolecheck.ForeColor = System.Drawing.Color.White;
-			this.consolecheck.Location = new System.Drawing.Point(12, 82);
+			this.consolecheck.Location = new System.Drawing.Point(12, 12);
 			this.consolecheck.Name = "consolecheck";
 			this.consolecheck.Size = new System.Drawing.Size(98, 19);
 			this.consolecheck.TabIndex = 1;
@@ -154,13 +154,13 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(17)))));
 			this.ClientSize = new System.Drawing.Size(484, 461);
+			this.Controls.Add(this.consolecheck);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.maxplayers);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.mapselect);
-			this.Controls.Add(this.consolecheck);
 			this.Controls.Add(this.lancheck);
 			this.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

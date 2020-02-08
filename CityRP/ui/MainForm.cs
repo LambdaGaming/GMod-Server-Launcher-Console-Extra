@@ -13,11 +13,14 @@ namespace CityRP_Server_Launcher_UI
 			consolecheck.Checked = Properties.Settings.Default.Console;
 			maxplayers.Value = Properties.Settings.Default.MaxPlayers;
 			mapselect.Text = Properties.Settings.Default.Map;
+
+			mapselect.Enabled = consolecheck.Checked;
+			maxplayers.Enabled = consolecheck.Checked;
+			lancheck.Enabled = consolecheck.Checked;
 		}
 
 		public string ConsoleEnabled = "";
 		public string LANEnabled = "";
-		public string MapName = "";
 
 		private void LanCheck( object sender, EventArgs e )
 		{
@@ -40,10 +43,11 @@ namespace CityRP_Server_Launcher_UI
 			else
 			{
 				ConsoleEnabled = "";
-				MapName = "";
 				mapselect.Text = "";
 			}
 			mapselect.Enabled = consolecheck.Checked;
+			maxplayers.Enabled = consolecheck.Checked;
+			lancheck.Enabled = consolecheck.Checked;
 			Properties.Settings.Default.Console = consolecheck.Checked;
 		}
 
@@ -54,7 +58,6 @@ namespace CityRP_Server_Launcher_UI
 
 		private void MapChanged( object sender, EventArgs e )
 		{
-			MapName = "+map " + mapselect.SelectedItem.ToString();
 			Properties.Settings.Default.Map = mapselect.SelectedItem.ToString();
 		}
 
@@ -65,7 +68,7 @@ namespace CityRP_Server_Launcher_UI
 				UseShellExecute = true,
 				WorkingDirectory = @"E:\lambda_cityrp",
 				FileName = @"E:\lambda_cityrp\srcds.exe",
-				Arguments = "+gamemode darkrp " + ConsoleEnabled + LANEnabled + MapName + " +maxplayers " + maxplayers.Value + " +r_hunkalloclightmaps 0",
+				Arguments = "+gamemode darkrp " + ConsoleEnabled + LANEnabled + "+map " + mapselect.SelectedItem.ToString() + " +maxplayers " + maxplayers.Value + " +r_hunkalloclightmaps 0",
 			};
 
 			try
