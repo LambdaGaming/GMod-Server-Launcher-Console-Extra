@@ -72,9 +72,9 @@
 			this.label1.ForeColor = System.Drawing.SystemColors.Control;
 			this.label1.Location = new System.Drawing.Point(12, 240);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(130, 15);
+			this.label1.Size = new System.Drawing.Size(29, 15);
 			this.label1.TabIndex = 3;
-			this.label1.Text = "Select Map (Console Only):";
+			this.label1.Text = "Map:";
 			// 
 			// button1
 			// 
