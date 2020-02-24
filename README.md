@@ -1,11 +1,27 @@
-# Garry's Mod Server Launcher With Console Support
- This is meant to act as a replacement launcher for hosts who want to use the full console while also wanting to choose the map the server starts on, since the normal UI version doesn't include that feature.
+# Garry's Mod Server Launcher GUI With Console Support - Extra Builds
+ These are extra builds of the Gmod server launcher that I use for my own servers. I'm including them here since they're slightly different from the main build and some people may want to edit them for their own needs. Please note however that I will not be giving support for these builds, and that, unlike the main build, most features of these builds are hard-coded and cannot be changed without a recompile.
 
-## Launcher Variations:
-I'm including the launchers I use for the Lambda Gaming servers since they're slightly different than the main customizable one, and some people may want to edit them for their own needs, but note that I'm only giving support for the main version.
+## Variations:
+ Below are the included variations of the server launcher and their features.
+### CityRP:
 <ul>
-	<li>Main version: Customizable without the need to recompile. Includes console mode, map selection, LAN mode, max players selection, password option, and gamemode selection.</li>
-	<li>CityRP: Includes console mode, map selection, LAN mode, and max players selection. Also includes an old console version with only map selection.</li>
-	<li>Sandbox: Includes console mode, LAN mode, max players selection, map selection, and an option for the program to pick a random map.</li>
-	<li>HLU RP: Includes console mode, LAN mode, max players selection, gamemode selection, and map selection based on selected gamemode.</li>
+	<li>Console mode toggle</li>
+	<li>LAN mode toggle</li>
+	<li>Map selection</li>
+	<li>Max players selection</li>
+	<li>Separate console version with only a map selection</li>
+</ul>
+
+### Half-Life Universe RP:
+<ul>
+	<li>Console mode toggle</li>
+	<li>LAN mode toggle</li>
+	<li>Gamemode selection</li>
+	<li>Map selection (Tied to gamemode selection)</li>
+	<li>Max players selection</li>
+</ul>
+
+### Sandbox:
+<ul>
+	<li>Console version only, randomly picks a map from a pre-defined list</li>
 </ul>
