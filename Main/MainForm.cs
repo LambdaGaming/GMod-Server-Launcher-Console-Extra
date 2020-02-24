@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace GMod_Server_Launcher_Console
@@ -9,38 +11,53 @@ namespace GMod_Server_Launcher_Console
 		public MainForm()
 		{
 			InitializeComponent();
+			this.BringToFront();
+			this.Focus();
+
 			lancheck.Checked = Properties.Settings.Default.Lan;
 			consolecheck.Checked = Properties.Settings.Default.Console;
 			maxplayers.Value = Properties.Settings.Default.MaxPlayers;
 			gameselect.Text = Properties.Settings.Default.Gamemode;
+			gameselect.SelectedItem = Properties.Settings.Default.Gamemode;
 			mapselect.Text = Properties.Settings.Default.Map;
+			mapselect.SelectedItem = Properties.Settings.Default.Map;
+			passwordBox.Text = Properties.Settings.Default.Password;
 
 			mapselect.Enabled = consolecheck.Checked;
 			lancheck.Enabled = consolecheck.Checked;
 			maxplayers.Enabled = consolecheck.Checked;
 			gameselect.Enabled = consolecheck.Checked;
+			passwordBox.Enabled = consolecheck.Checked;
 
-			if ( gameselect.Text == "cascade" ) mapselect.Enabled = false;
+			StringBuilder path = new StringBuilder( label4.Text );
+			path.Append( Properties.Settings.Default.FilePath );
+			label4.Text = path.ToString();
+
+			string[] listgamemodes = Directory.GetDirectories( Properties.Settings.Default.FilePath + @"\garrysmod\gamemodes" );
+			foreach ( string gamemode in listgamemodes )
+			{
+				string foldername = Path.GetFileName( gamemode );
+				if ( foldername != "base" )
+				{
+					gameselect.Items.Add( foldername );
+				}
+			}
+
+			string[] listmaps = Directory.GetFiles( Properties.Settings.Default.FilePath + @"\garrysmod\maps" );
+			foreach ( string map in listmaps )
+			{
+				string extension = Path.GetExtension( map );
+				string mapname = Path.GetFileNameWithoutExtension( map );
+				if ( extension == ".bsp" )
+				{
+					mapselect.Items.Add( mapname );
+				}
+			}
 		}
 
 		public string ConsoleEnabled = "";
 		public string LANEnabled = "";
-
-		public string CascadeMaps = "rp_bmrf";
-		public string[] BMRPMaps = {
-			"rp_sectorc_beta",
-			"rp_blackmesa_laboratory",
-			"rp_blackmesa_complex_fixed"
-		};
-		public string[] City17RPMaps = {
-			"rp_city17_build210",
-			"rp_city17_district47",
-			"rp_city24_v2"
-		};
-		public string[] OutlandRPMaps = {
-			"rp_ineu_valley2_v1a",
-			"gm_boreas"
-		};
+		public string Password = "";
 
 		private void LanCheck( object sender, EventArgs e )
 		{
@@ -85,50 +102,29 @@ namespace GMod_Server_Launcher_Console
 
 		private void GamemodeChanged( object sender, EventArgs e )
 		{
-			if ( gameselect.Text == "cascade" )
-			{
-				mapselect.Enabled = false;
-				mapselect.Items.Clear();
-				mapselect.Items.Add( CascadeMaps );
-				mapselect.SelectedItem = CascadeMaps;
-			}
-			else if ( gameselect.Text == "bmrphlu" )
-			{
-				mapselect.Enabled = true;
-				mapselect.Items.Clear();
-
-				foreach ( string map in BMRPMaps )
-				{
-					mapselect.Items.Add( map );
-				}
-
-				mapselect.SelectedItem = BMRPMaps[0];
-			}
-			else if ( gameselect.Text == "city17rp" )
-			{
-				mapselect.Enabled = true;
-				mapselect.Items.Clear();
-
-				foreach ( string map in City17RPMaps )
-				{
-					mapselect.Items.Add( map );
-				}
-
-				mapselect.SelectedItem = City17RPMaps[0];
-			}
-			else if ( gameselect.Text == "outlandrp" )
-			{
-				mapselect.Enabled = true;
-				mapselect.Items.Clear();
-
-				foreach ( string map in OutlandRPMaps )
-				{
-					mapselect.Items.Add( map );
-				}
-
-				mapselect.SelectedItem = OutlandRPMaps[0];
-			}
 			Properties.Settings.Default.Gamemode = gameselect.SelectedItem.ToString();
+		}
+
+		private void ChangePathClick(object sender, EventArgs e)
+		{
+			FolderBrowserDialog browse = new FolderBrowserDialog();
+			browse.Description = "Select server file path. (The folder containing the srcds.exe file.)";
+			if (browse.ShowDialog() == DialogResult.OK)
+			{
+				Properties.Settings.Default.FilePath = browse.SelectedPath;
+				label4.Text = "Current server file path: " + Properties.Settings.Default.FilePath;
+			}
+		}
+
+		private void PasswordChanged(object sender, EventArgs e)
+		{
+			Properties.Settings.Default.Password = passwordBox.Text;
+			if (string.IsNullOrWhiteSpace(passwordBox.Text))
+			{
+				Password = "";
+				return;
+			}
+			Password = " +sv_password " + passwordBox.Text;
 		}
 
 		private void StartButtonClick( object sender, EventArgs e )
@@ -136,9 +132,9 @@ namespace GMod_Server_Launcher_Console
 			var proc = new ProcessStartInfo
 			{
 				UseShellExecute = true,
-				WorkingDirectory = @"C:\lambdarp",
-				FileName = @"C:\lambdarp\srcds.exe",
-				Arguments = "+gamemode " + gameselect.SelectedItem.ToString() + ConsoleEnabled + LANEnabled + "+map " + mapselect.SelectedItem.ToString() + " +maxplayers " + maxplayers.Value + " +r_hunkalloclightmaps 0",
+				WorkingDirectory = Properties.Settings.Default.FilePath,
+				FileName = Properties.Settings.Default.FilePath + @"\srcds.exe",
+				Arguments = "+gamemode " + gameselect.Text.ToString() + ConsoleEnabled + LANEnabled + "+map " + mapselect.Text.ToString() + " +maxplayers " + maxplayers.Value + " +r_hunkalloclightmaps 0" + Password,
 			};
 
 			try
@@ -151,11 +147,6 @@ namespace GMod_Server_Launcher_Console
 				DialogResult launcherror = MessageBox.Show( "Failed to launch. Invalid file path.", "Launch Error", MessageBoxButtons.OK, MessageBoxIcon.Error );
 				if ( launcherror == DialogResult.OK ) Close();
 			}
-		}
-
-		private void pictureBox1_Click(object sender, EventArgs e)
-		{
-
 		}
 	}
 }
