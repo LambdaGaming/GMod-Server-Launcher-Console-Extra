@@ -54,7 +54,7 @@
 			this.mapselect.FormattingEnabled = true;
 			this.mapselect.Items.AddRange(new object[] {
             "rp_rockford_v2b",
-            "rp_chaos_city_v33x_03",
+            "RP_SouthSide",
             "rp_evocity2_v5p",
             "rp_florida_v2",
             "rp_truenorth_v1a",
