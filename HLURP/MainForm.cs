@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace CityRP_Server_Launcher_UI
+namespace HLURP_Server_Launcher
 {
 	public partial class MainForm : Form
 	{
@@ -27,17 +27,13 @@ namespace CityRP_Server_Launcher_UI
 		public string LANEnabled = "";
 
 		public string CascadeMaps = "rp_bmrf";
-		public string[] BMRPMaps = {
+		public string[] HLUMaps = {
 			"rp_sectorc_beta",
 			"rp_blackmesa_laboratory",
-			"rp_blackmesa_complex_fixed"
-		};
-		public string[] City17RPMaps = {
+			"rp_blackmesa_complex_fixed",
 			"rp_city17_build210",
 			"rp_city17_district47",
-			"rp_city24_v2"
-		};
-		public string[] OutlandRPMaps = {
+			"rp_city24_v2",
 			"rp_ineu_valley2_v1a",
 			"gm_boreas"
 		};
@@ -92,41 +88,17 @@ namespace CityRP_Server_Launcher_UI
 				mapselect.Items.Add( CascadeMaps );
 				mapselect.SelectedItem = CascadeMaps;
 			}
-			else if ( gameselect.Text == "bmrphlu" )
+			else
 			{
 				mapselect.Enabled = true;
 				mapselect.Items.Clear();
 
-				foreach ( string map in BMRPMaps )
+				foreach ( string map in HLUMaps )
 				{
 					mapselect.Items.Add( map );
 				}
 
-				mapselect.SelectedItem = BMRPMaps[0];
-			}
-			else if ( gameselect.Text == "city17rp" )
-			{
-				mapselect.Enabled = true;
-				mapselect.Items.Clear();
-
-				foreach ( string map in City17RPMaps )
-				{
-					mapselect.Items.Add( map );
-				}
-
-				mapselect.SelectedItem = City17RPMaps[0];
-			}
-			else if ( gameselect.Text == "outlandrp" )
-			{
-				mapselect.Enabled = true;
-				mapselect.Items.Clear();
-
-				foreach ( string map in OutlandRPMaps )
-				{
-					mapselect.Items.Add( map );
-				}
-
-				mapselect.SelectedItem = OutlandRPMaps[0];
+				mapselect.SelectedItem = HLUMaps[0];
 			}
 			Properties.Settings.Default.Gamemode = gameselect.SelectedItem.ToString();
 		}

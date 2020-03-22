@@ -1,4 +1,4 @@
-﻿namespace CityRP_Server_Launcher_UI
+﻿namespace HLURP_Server_Launcher
 {
 	partial class MainForm
 	{
@@ -28,9 +28,9 @@
 			this.maxplayers = new System.Windows.Forms.NumericUpDown();
 			this.label2 = new System.Windows.Forms.Label();
 			this.consolecheck = new System.Windows.Forms.CheckBox();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.gameselect = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.maxplayers)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
@@ -135,24 +135,12 @@
 			this.consolecheck.UseVisualStyleBackColor = true;
 			this.consolecheck.CheckedChanged += new System.EventHandler(this.ConsoleCheck);
 			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = global::CityRP_Server_Launcher_UI.Properties.Resources.lambda_srcds_2018_transparent;
-			this.pictureBox1.ImageLocation = "";
-			this.pictureBox1.Location = new System.Drawing.Point(233, 102);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(204, 179);
-			this.pictureBox1.TabIndex = 5;
-			this.pictureBox1.TabStop = false;
-			// 
 			// gameselect
 			// 
 			this.gameselect.FormattingEnabled = true;
 			this.gameselect.Items.AddRange(new object[] {
             "cascade",
-            "bmrphlu",
-            "city17rp",
-            "outlandrp"});
+            "hlurp"});
 			this.gameselect.Location = new System.Drawing.Point(12, 258);
 			this.gameselect.Name = "gameselect";
 			this.gameselect.Size = new System.Drawing.Size(121, 23);
@@ -169,6 +157,16 @@
 			this.label3.Size = new System.Drawing.Size(62, 15);
 			this.label3.TabIndex = 9;
 			this.label3.Text = "Gamemode:";
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::HLURP_Server_Launcher.Properties.Resources.lambda_srcds_2020;
+			this.pictureBox1.ImageLocation = "";
+			this.pictureBox1.Location = new System.Drawing.Point(233, 102);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+			this.pictureBox1.TabIndex = 5;
+			this.pictureBox1.TabStop = false;
 			// 
 			// MainForm
 			// 

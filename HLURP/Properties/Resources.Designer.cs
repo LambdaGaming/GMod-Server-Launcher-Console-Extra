@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CityRP_Server_Launcher_UI.Properties {
+namespace HLURP_Server_Launcher.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace CityRP_Server_Launcher_UI.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CityRP_Server_Launcher_UI.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HLURP_Server_Launcher.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace CityRP_Server_Launcher_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lambda_srcds_2018_transparent {
+        internal static System.Drawing.Bitmap lambda_srcds_2020 {
             get {
-                object obj = ResourceManager.GetObject("lambda_srcds_2018_transparent", resourceCulture);
+                object obj = ResourceManager.GetObject("lambda_srcds_2020", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

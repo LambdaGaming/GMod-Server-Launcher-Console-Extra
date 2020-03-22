@@ -85,7 +85,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lambda_srcds_2018_transparent.png" />
+    <None Include="Resources\lambda_srcds_2020.png" />
     <Content Include="serverlaunchericon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

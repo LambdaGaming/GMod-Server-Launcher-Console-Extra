@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace CityRP_Server_Launcher_UI
+namespace HLURP_Server_Launcher
 {
 	static class Program
 	{

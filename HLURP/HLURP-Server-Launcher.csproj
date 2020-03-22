@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3738F99F-86D6-43B2-94BF-BA9636E0D7DC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CityRP_Server_Launcher_UI</RootNamespace>
-    <AssemblyName>CityRP-Server-Launcher-UI</AssemblyName>
+    <RootNamespace>HLURP_Server_Launcher</RootNamespace>
+    <AssemblyName>HLURP-Server-Launcher</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -85,7 +85,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lambda_srcds_2018_transparent.png" />
+    <None Include="Resources\lambda_srcds_2020.png" />
     <Content Include="serverlaunchericon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

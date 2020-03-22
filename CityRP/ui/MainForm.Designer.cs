@@ -140,11 +140,11 @@
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Image = global::CityRP_Server_Launcher_UI.Properties.Resources.lambda_srcds_2018_transparent;
+			this.pictureBox1.Image = global::CityRP_Server_Launcher_UI.Properties.Resources.lambda_srcds_2020;
 			this.pictureBox1.ImageLocation = "";
 			this.pictureBox1.Location = new System.Drawing.Point(233, 102);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(204, 179);
+			this.pictureBox1.Size = new System.Drawing.Size(200, 200);
 			this.pictureBox1.TabIndex = 5;
 			this.pictureBox1.TabStop = false;
 			// 
