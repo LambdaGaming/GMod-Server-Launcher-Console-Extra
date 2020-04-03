@@ -31,6 +31,7 @@ namespace HLURP_Server_Launcher
 			"rp_sectorc_beta",
 			"rp_blackmesa_laboratory",
 			"rp_blackmesa_complex_fixed",
+			"rp_bmrf",
 			"rp_city17_build210",
 			"rp_city17_district47",
 			"rp_city24_v2",
