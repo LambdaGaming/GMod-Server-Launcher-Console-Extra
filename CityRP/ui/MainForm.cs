@@ -24,7 +24,7 @@ namespace CityRP_Server_Launcher_UI
 
 		private void LanCheck( object sender, EventArgs e )
 		{
-			if( lancheck.Checked )
+			if ( lancheck.Checked )
 			{
 				LANEnabled = " +sv_lan 1 ";
 				Properties.Settings.Default.Lan = lancheck.Checked;
@@ -36,7 +36,7 @@ namespace CityRP_Server_Launcher_UI
 
 		private void ConsoleCheck( object sender, EventArgs e )
 		{
-			if( consolecheck.Checked )
+			if ( consolecheck.Checked )
 			{
 				ConsoleEnabled = " -console ";
 			}
@@ -63,12 +63,13 @@ namespace CityRP_Server_Launcher_UI
 
 		private void StartButtonClick( object sender, EventArgs e )
 		{
+			string Token = System.IO.File.ReadAllText( @"E:\lambda_cityrp\token.txt" );
 			var proc = new ProcessStartInfo
 			{
 				UseShellExecute = true,
 				WorkingDirectory = @"E:\lambda_cityrp",
 				FileName = @"E:\lambda_cityrp\srcds.exe",
-				Arguments = "+gamemode darkrp " + ConsoleEnabled + LANEnabled + "+map " + mapselect.SelectedItem.ToString() + " +maxplayers " + maxplayers.Value + " +r_hunkalloclightmaps 0",
+				Arguments = "+gamemode darkrp " + ConsoleEnabled + LANEnabled + "+map " + mapselect.SelectedItem.ToString() + " +maxplayers " + maxplayers.Value + " +r_hunkalloclightmaps 0 +sv_setsteamaccount " + Token,
 			};
 
 			try

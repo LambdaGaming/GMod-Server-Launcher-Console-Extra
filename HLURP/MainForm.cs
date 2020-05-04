@@ -41,7 +41,7 @@ namespace HLURP_Server_Launcher
 
 		private void LanCheck( object sender, EventArgs e )
 		{
-			if( lancheck.Checked )
+			if ( lancheck.Checked )
 			{
 				LANEnabled = " +sv_lan 1 ";
 				Properties.Settings.Default.Lan = lancheck.Checked;
@@ -53,7 +53,7 @@ namespace HLURP_Server_Launcher
 
 		private void ConsoleCheck( object sender, EventArgs e )
 		{
-			if( consolecheck.Checked )
+			if ( consolecheck.Checked )
 			{
 				ConsoleEnabled = " -console ";
 			}
@@ -98,7 +98,6 @@ namespace HLURP_Server_Launcher
 				{
 					mapselect.Items.Add( map );
 				}
-
 				mapselect.SelectedItem = HLUMaps[0];
 			}
 			Properties.Settings.Default.Gamemode = gameselect.SelectedItem.ToString();
@@ -106,12 +105,13 @@ namespace HLURP_Server_Launcher
 
 		private void StartButtonClick( object sender, EventArgs e )
 		{
+			string Token = System.IO.File.ReadAllText( @"C:\lambdarp\token.txt" );
 			var proc = new ProcessStartInfo
 			{
 				UseShellExecute = true,
 				WorkingDirectory = @"C:\lambdarp",
 				FileName = @"C:\lambdarp\srcds.exe",
-				Arguments = "+gamemode " + gameselect.SelectedItem.ToString() + ConsoleEnabled + LANEnabled + "+map " + mapselect.SelectedItem.ToString() + " +maxplayers " + maxplayers.Value + " +r_hunkalloclightmaps 0",
+				Arguments = "+gamemode " + gameselect.SelectedItem.ToString() + ConsoleEnabled + LANEnabled + "+map " + mapselect.SelectedItem.ToString() + " +maxplayers " + maxplayers.Value + " +r_hunkalloclightmaps 0 +sv_setsteamaccount " + Token,
 			};
 
 			try
