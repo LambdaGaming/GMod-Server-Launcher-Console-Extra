@@ -1,1 +1,0 @@
-Old console version of the launcher. I'm keeping it here for anyone who wants to use it as a template or something.
